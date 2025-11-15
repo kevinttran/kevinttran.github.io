@@ -109,6 +109,52 @@
   color: #282c34;
 }
 
+.frameworks-section {
+  background-color: #f5f5f5;
+  padding: 80px 20px;
+}
+
+.frameworks-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.framework-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.framework-item:hover {
+  transform: translateY(-5px);
+}
+
+.framework-icon {
+  font-size: 64px;
+  width: 64px;
+  height: 64px;
+}
+
+.framework-image {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+}
+
+.framework-name {
+  font-size: 16px;
+  font-weight: 500;
+  color: #282c34;
+  text-align: center;
+}
+
 @media (max-width: 768px) {
   .profile-photo {
     width: 150px;
@@ -124,5 +170,25 @@
     font-size: 48px;
     width: 48px;
     height: 48px;
+  }
+
+  .frameworks-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+  }
+
+  .framework-icon {
+    font-size: 48px;
+    width: 48px;
+    height: 48px;
+  }
+
+  .framework-image {
+    width: 48px;
+    height: 48px;
+  }
+
+  .framework-name {
+    font-size: 14px;
   }
 }

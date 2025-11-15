@@ -1,5 +1,9 @@
 import './App.css';
-import { FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaCode } from 'react-icons/fa';
+import { 
+  FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaCode,
+  FaServer, FaNodeJs, FaReact, FaAngular, FaDocker, FaGithub,
+  FaGitlab, FaDatabase, FaCubes, FaSearch, FaTools
+} from 'react-icons/fa';
 
 function App() {
   const languages = [
@@ -9,6 +13,36 @@ function App() {
     { name: 'Java', icon: FaJava, color: '#ED8B00' },
     { name: 'Python', icon: FaPython, color: '#3776AB' },
     { name: 'C#', icon: FaCode, color: '#239120' }
+  ];
+
+  // Organized by category: JavaScript/Node.js, Java, Container/Orchestration, Cloud/Infrastructure, Data/Streaming, DevOps/Tools
+  const frameworks = [
+    // JavaScript/Node.js frameworks
+    { name: 'Express.js', icon: FaCode, color: '#000000', category: 'JavaScript/Node.js' },
+    { name: 'Node.js', icon: FaNodeJs, color: '#339933', category: 'JavaScript/Node.js' },
+    { name: 'React', icon: FaReact, color: '#61DAFB', category: 'JavaScript/Node.js' },
+    { name: 'Angular', icon: FaAngular, color: '#DD0031', category: 'JavaScript/Node.js' },
+    { name: 'Angular.js', icon: FaAngular, color: '#E23237', category: 'JavaScript/Node.js' },
+    // Java frameworks
+    { name: 'Spark', icon: null, image: 'Apache_Spark_logo.svg.png', color: '#E25A1C', category: 'Java' },
+    { name: 'Hadoop', icon: FaDatabase, color: '#66CCFF', category: 'Java' },
+    { name: 'JBoss', icon: null, image: 'JBoss_logo.svg.png', color: '#FF0000', category: 'Java' },
+    // Container/Orchestration
+    { name: 'Kubernetes', icon: FaCubes, color: '#326CE5', category: 'Container/Orchestration' },
+    { name: 'Docker', icon: FaDocker, color: '#2496ED', category: 'Container/Orchestration' },
+    { name: 'Openshift', icon: null, image: 'open_shift_logo.png', color: '#EE0000', category: 'Container/Orchestration' },
+    // Cloud/Infrastructure
+    { name: 'Oracle OCI', icon: null, image: 'Oracle-Cloud-Logo.png', color: '#F80000', category: 'Cloud/Infrastructure' },
+    { name: 'Apache Web Server', icon: null, image: 'Apache_HTTP_server_logo_(2019-present).svg.png', color: '#D22128', category: 'Cloud/Infrastructure' },
+    // Data/Streaming
+    { name: 'Kafka', icon: null, image: 'Apache_Kafka_logo.svg.png', color: '#231F20', category: 'Data/Streaming' },
+    { name: 'Splunk', icon: FaSearch, color: '#000000', category: 'Data/Streaming' },
+    // DevOps/Tools
+    { name: 'Control M', icon: FaServer, color: '#0078D4', category: 'DevOps/Tools' },
+    { name: 'Postman', icon: FaTools, color: '#FF6C37', category: 'DevOps/Tools' },
+    { name: 'Github', icon: FaGithub, color: '#181717', category: 'DevOps/Tools' },
+    { name: 'Gitlab', icon: FaGitlab, color: '#FC6D26', category: 'DevOps/Tools' },
+    { name: 'Oracle OJet', icon: FaDatabase, color: '#F80000', category: 'DevOps/Tools' }
   ];
 
   return (
@@ -53,6 +87,29 @@ function App() {
               <div key={lang.name} className="language-item">
                 <IconComponent className="language-icon" style={{ color: lang.color }} />
                 <span className="language-name">{lang.name}</span>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      <section className="frameworks-section">
+        <h2 className="section-title">Development Frameworks and Libraries</h2>
+        <div className="frameworks-grid">
+          {frameworks.map((framework) => {
+            const IconComponent = framework.icon;
+            return (
+              <div key={framework.name} className="framework-item">
+                {framework.image ? (
+                  <img 
+                    src={process.env.PUBLIC_URL + '/' + framework.image} 
+                    alt={framework.name}
+                    className="framework-icon framework-image"
+                  />
+                ) : (
+                  <IconComponent className="framework-icon" style={{ color: framework.color }} />
+                )}
+                <span className="framework-name">{framework.name}</span>
               </div>
             );
           })}
