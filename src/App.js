@@ -38,7 +38,7 @@ function App() {
     { name: 'Kafka', icon: null, image: 'Apache_Kafka_logo.svg.png', color: '#231F20', category: 'Data/Streaming' },
     { name: 'Splunk', icon: null, image: 'Splunk_logo.png', color: '#000000', category: 'Data/Streaming' },
     // DevOps/Tools
-    { name: 'Control M', icon: null, image: 'Control-M_logo.svg.png', color: '#0078D4', category: 'DevOps/Tools' },
+    { name: 'Control M', icon: null, image: 'Control-m_logo.svg.png', color: '#0078D4', category: 'DevOps/Tools' },
     { name: 'Postman', icon: null, image: 'Postman_logo.svg.png', color: '#FF6C37', category: 'DevOps/Tools' },
     { name: 'Github', icon: FaGithub, color: '#181717', category: 'DevOps/Tools' },
     { name: 'Gitlab', icon: FaGitlab, color: '#FC6D26', category: 'DevOps/Tools' },
