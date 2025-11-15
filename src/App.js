@@ -1,8 +1,8 @@
 import './App.css';
 import { 
   FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaCode,
-  FaServer, FaNodeJs, FaReact, FaAngular, FaDocker, FaGithub,
-  FaGitlab, FaDatabase, FaCubes, FaSearch, FaTools
+  FaNodeJs, FaReact, FaAngular, FaDocker, FaGithub,
+  FaGitlab, FaCubes
 } from 'react-icons/fa';
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
     { name: 'Angular.js', icon: FaAngular, color: '#E23237', category: 'JavaScript/Node.js' },
     // Java frameworks
     { name: 'Spark', icon: null, image: 'Apache_Spark_logo.svg.png', color: '#E25A1C', category: 'Java' },
-    { name: 'Hadoop', icon: FaDatabase, color: '#66CCFF', category: 'Java' },
+    { name: 'Hadoop', icon: null, image: 'Hadoop_logo.svg.png', color: '#66CCFF', category: 'Java' },
     { name: 'JBoss', icon: null, image: 'JBoss_logo.svg.png', color: '#FF0000', category: 'Java' },
     // Container/Orchestration
     { name: 'Kubernetes', icon: FaCubes, color: '#326CE5', category: 'Container/Orchestration' },
@@ -36,13 +36,13 @@ function App() {
     { name: 'Apache Web Server', icon: null, image: 'Apache_HTTP_server_logo_(2019-present).svg.png', color: '#D22128', category: 'Cloud/Infrastructure' },
     // Data/Streaming
     { name: 'Kafka', icon: null, image: 'Apache_Kafka_logo.svg.png', color: '#231F20', category: 'Data/Streaming' },
-    { name: 'Splunk', icon: FaSearch, color: '#000000', category: 'Data/Streaming' },
+    { name: 'Splunk', icon: null, image: 'Splunk_logo.png', color: '#000000', category: 'Data/Streaming' },
     // DevOps/Tools
-    { name: 'Control M', icon: FaServer, color: '#0078D4', category: 'DevOps/Tools' },
-    { name: 'Postman', icon: FaTools, color: '#FF6C37', category: 'DevOps/Tools' },
+    { name: 'Control M', icon: null, image: 'Control-M_logo.svg.png', color: '#0078D4', category: 'DevOps/Tools' },
+    { name: 'Postman', icon: null, image: 'Postman_logo.svg.png', color: '#FF6C37', category: 'DevOps/Tools' },
     { name: 'Github', icon: FaGithub, color: '#181717', category: 'DevOps/Tools' },
     { name: 'Gitlab', icon: FaGitlab, color: '#FC6D26', category: 'DevOps/Tools' },
-    { name: 'Oracle OJet', icon: FaDatabase, color: '#F80000', category: 'DevOps/Tools' }
+    { name: 'Oracle OJet', icon: null, image: 'Oracle_OJet_logo.png', color: '#F80000', category: 'DevOps/Tools' }
   ];
 
   return (
