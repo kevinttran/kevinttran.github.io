@@ -22,14 +22,14 @@ function App() {
     { name: 'Node.js', icon: FaNodeJs, color: '#339933', category: 'JavaScript/Node.js' },
     { name: 'React', icon: FaReact, color: '#61DAFB', category: 'JavaScript/Node.js' },
     { name: 'Angular', icon: FaAngular, color: '#DD0031', category: 'JavaScript/Node.js' },
-    { name: 'Angular.js', icon: FaAngular, color: '#E23237', category: 'JavaScript/Node.js' },
+    { name: 'Angular.js', icon: FaAngular, color: '#DD0031', category: 'JavaScript/Node.js' },
     // Java frameworks
     { name: 'Spark', icon: null, image: 'Apache_Spark_logo.svg.png', color: '#E25A1C', category: 'Java' },
     { name: 'Hadoop', icon: null, image: 'Hadoop_logo.svg.png', color: '#66CCFF', category: 'Java' },
     { name: 'JBoss', icon: null, image: 'JBoss_logo.svg.png', color: '#FF0000', category: 'Java' },
     // Container/Orchestration
     { name: 'Kubernetes', icon: FaCubes, color: '#326CE5', category: 'Container/Orchestration' },
-    { name: 'Docker', icon: FaDocker, color: '#2496ED', category: 'Container/Orchestration' },
+    { name: 'Docker', icon: FaDocker, color: '#0db7ed', category: 'Container/Orchestration' },
     { name: 'Openshift', icon: null, image: 'open_shift_logo.png', color: '#EE0000', category: 'Container/Orchestration' },
     // Cloud/Infrastructure
     { name: 'Oracle OCI', icon: null, image: 'Oracle-Cloud-Logo.png', color: '#F80000', category: 'Cloud/Infrastructure' },
