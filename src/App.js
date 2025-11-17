@@ -42,7 +42,11 @@ function App() {
     { name: 'Postman', icon: null, image: 'Postman_logo.svg.png', color: '#FF6C37', category: 'DevOps/Tools' },
     { name: 'Github', icon: FaGithub, color: '#181717', category: 'DevOps/Tools' },
     { name: 'Gitlab', icon: FaGitlab, color: '#FC6D26', category: 'DevOps/Tools' },
-    { name: 'Oracle OJet', icon: null, image: 'Oracle_OJet_logo.png', color: '#F80000', category: 'DevOps/Tools' }
+    { name: 'Oracle OJet', icon: null, image: 'Oracle_OJet_logo.png', color: '#F80000', category: 'DevOps/Tools' },
+    // Databases / Search
+    { name: 'Microsoft SQL Server', icon: null, image: 'Microsoft_SQL_Server_Logo.svg.png', color: '#CC2927', category: 'Databases' },
+    { name: 'Couchbase', icon: null, image: 'couchbase.svg', color: '#DE3C3C', category: 'Databases' },
+    { name: 'Elasticsearch', icon: null, image: 'Elastic_search.svg', color: '#005571', category: 'Data/Streaming' }
   ];
 
   return (
