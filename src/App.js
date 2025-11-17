@@ -2,7 +2,7 @@ import './App.css';
 import { 
   FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaCode,
   FaNodeJs, FaReact, FaAngular, FaDocker, FaGithub,
-  FaGitlab, FaCubes
+  FaGitlab, FaCubes, FaLinkedin, FaEnvelope
 } from 'react-icons/fa';
 
 function App() {
@@ -58,6 +58,27 @@ function App() {
         />
         <h1 className="App-title">Kevin Tuan Tran</h1>
         <h2 className="App-subtitle">Full Stack Engineer</h2>
+        <div className="socials-row">
+          {[
+            { name: 'GitHub', url: 'https://github.com/kevinttran', icon: FaGithub, color: '#181717' },
+            { name: 'LinkedIn', url: 'https://www.linkedin.com/in/kevintuli', icon: FaLinkedin, color: '#0A66C2' },
+            { name: 'Email', url: 'mailto:kevinttran@gmail.com', icon: FaEnvelope, color: '#D14836' }
+          ].map((s) => {
+            const Icon = s.icon;
+            return (
+              <a
+                key={s.name}
+                className="social-link"
+                href={s.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={s.name}
+              >
+                <Icon className="social-icon" style={{ color: s.color }} />
+              </a>
+            );
+          })}
+        </div>
       </header>
 
       <section className="about-section">
