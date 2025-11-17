@@ -18,7 +18,7 @@ function App() {
   // Organized by category: JavaScript/Node.js, Java, Container/Orchestration, Cloud/Infrastructure, Data/Streaming, DevOps/Tools
   const frameworks = [
     // JavaScript/Node.js frameworks
-    { name: 'Express.js', icon: FaCode, color: '#000000', category: 'JavaScript/Node.js' },
+    { name: 'Express.js', icon: null, image: 'Express.svg', color: '#000000', category: 'JavaScript/Node.js' },
     { name: 'Node.js', icon: FaNodeJs, color: '#339933', category: 'JavaScript/Node.js' },
     { name: 'React', icon: FaReact, color: '#61DAFB', category: 'JavaScript/Node.js' },
     { name: 'Angular', icon: FaAngular, color: '#DD0031', category: 'JavaScript/Node.js' },
