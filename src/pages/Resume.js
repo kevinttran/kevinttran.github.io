@@ -61,7 +61,7 @@ function Resume() {
       <header className="resume-header">
         <h1>Resume</h1>
         <a 
-          href="#" 
+          href={process.env.PUBLIC_URL + '/SD_Resume.pdf'} 
           className="download-btn"
           target="_blank" 
           rel="noopener noreferrer"

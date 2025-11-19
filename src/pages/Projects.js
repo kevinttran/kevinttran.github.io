@@ -6,23 +6,23 @@ function Projects() {
   const corporateProjects = [
     {
       name: 'Hoodoo',
-      description: 'A comprehensive digital experience platform that integrates content management with customer data to deliver personalized user journeys. Leveraged modern web technologies to improve site performance and user engagement metrics significantly.',
-      tech: ['React', 'Node.js', 'AWS']
+      description: 'Hoodoo is an internal scheduling tool I supported for the USAA operations development team, designed to manage on-call shifts and display them on an interactive calendar. It provides automated notifications, shift reminders, and dashboards showing who is on call across different responsibility areas.',
+      tech: ['Angular', 'Java', 'ServiceNow', 'OpenShift', 'GitLab CICD', 'Docker', 'Kubernetes', 'Control M']
     },
     {
       name: 'Accelerator',
-      description: 'An internal developer productivity tool designed to streamline the software development lifecycle. Automated key parts of the CI/CD pipeline, reducing deployment times and minimizing manual errors for engineering teams.',
-      tech: ['Python', 'Docker', 'Jenkins']
+      description: 'Accelerator is an internal enterprise messaging system built at USAA that unified SMS, internal chat-style messaging, and email delivery. It alerted teams about system outages, sent on-call paging notifications, and supported organization-wide communication. The platform enabled rapid, reliable messaging across multiple channels within the company.',
+      tech: ['Java', 'JBoss', 'Jenkins', 'Angular.JS']
     },
     {
       name: 'Arena',
-      description: 'A real-time data visualization dashboard for monitoring system health and operational metrics. Provided actionable insights through interactive charts and graphs, enabling rapid incident response and resolution.',
-      tech: ['Angular', 'D3.js', 'Java']
+      description: 'Arena is an internal platform application built on Oracle OCI that enabled other teams to develop and deploy applications on top of it. It streamlined onboarding with CLI tools that allowed new projects to integrate quickly and efficiently.',
+      tech: ['Oracle OJet', 'OCI Cloud', 'Python', 'GraphQL', 'Gitlab CICD', 'Flask', 'Docker', 'Kubernetes']
     },
     {
       name: 'Marketing Cloud Contacts',
       description: 'A high-scale contact management system capable of handling billions of records. Optimized database queries and implemented caching strategies to ensure low-latency access to critical customer information.',
-      tech: ['C#', 'SQL Server', 'Azure']
+      tech: ['C#', 'SQL Server', 'Splunk', 'Docker', 'Kubernetes']
     }
   ];
 
