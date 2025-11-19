@@ -19,35 +19,35 @@ function About() {
   // Organized by category: JavaScript/Node.js, Java, Container/Orchestration, Cloud/Infrastructure, Data/Streaming, DevOps/Tools
   const frameworks = [
     // JavaScript/Node.js frameworks
-    { name: 'Express.js', icon: null, image: 'Express.svg', color: '#000000', category: 'JavaScript/Node.js' },
+    { name: 'Express.js', icon: null, image: 'icons/Express.svg', color: '#000000', category: 'JavaScript/Node.js' },
     { name: 'Node.js', icon: FaNodeJs, color: '#339933', category: 'JavaScript/Node.js' },
     { name: 'React', icon: FaReact, color: '#61DAFB', category: 'JavaScript/Node.js' },
     { name: 'Angular', icon: FaAngular, color: '#DD0031', category: 'JavaScript/Node.js' },
     { name: 'Angular.js', icon: FaAngular, color: '#DD0031', category: 'JavaScript/Node.js' },
     // Java frameworks
-    { name: 'Spark', icon: null, image: 'Apache_Spark_logo.svg.png', color: '#E25A1C', category: 'Java' },
-    { name: 'Hadoop', icon: null, image: 'Hadoop_logo.svg.png', color: '#66CCFF', category: 'Java' },
-    { name: 'JBoss', icon: null, image: 'JBoss_logo.svg.png', color: '#FF0000', category: 'Java' },
+    { name: 'Spark', icon: null, image: 'icons/Apache_Spark_logo.svg.png', color: '#E25A1C', category: 'Java' },
+    { name: 'Hadoop', icon: null, image: 'icons/Hadoop_logo.svg.png', color: '#66CCFF', category: 'Java' },
+    { name: 'JBoss', icon: null, image: 'icons/JBoss_logo.svg.png', color: '#FF0000', category: 'Java' },
     // Container/Orchestration
     { name: 'Kubernetes', icon: FaCubes, color: '#326CE5', category: 'Container/Orchestration' },
     { name: 'Docker', icon: FaDocker, color: '#0db7ed', category: 'Container/Orchestration' },
-    { name: 'Openshift', icon: null, image: 'open_shift_logo.png', color: '#EE0000', category: 'Container/Orchestration' },
+    { name: 'Openshift', icon: null, image: 'icons/open_shift_logo.png', color: '#EE0000', category: 'Container/Orchestration' },
     // Cloud/Infrastructure
-    { name: 'Oracle OCI', icon: null, image: 'Oracle-Cloud-Logo.png', color: '#F80000', category: 'Cloud/Infrastructure' },
-    { name: 'Apache Web Server', icon: null, image: 'Apache_HTTP_server_logo_(2019-present).svg.png', color: '#D22128', category: 'Cloud/Infrastructure' },
+    { name: 'Oracle OCI', icon: null, image: 'icons/Oracle-Cloud-Logo.png', color: '#F80000', category: 'Cloud/Infrastructure' },
+    { name: 'Apache Web Server', icon: null, image: 'icons/Apache_HTTP_server_logo_(2019-present).svg.png', color: '#D22128', category: 'Cloud/Infrastructure' },
     // Data/Streaming
-    { name: 'Kafka', icon: null, image: 'Apache_Kafka_logo.svg.png', color: '#231F20', category: 'Data/Streaming' },
-    { name: 'Splunk', icon: null, image: 'Splunk_logo.png', color: '#000000', category: 'Data/Streaming' },
+    { name: 'Kafka', icon: null, image: 'icons/Apache_Kafka_logo.svg.png', color: '#231F20', category: 'Data/Streaming' },
+    { name: 'Splunk', icon: null, image: 'icons/Splunk_logo.png', color: '#000000', category: 'Data/Streaming' },
     // DevOps/Tools
-    { name: 'Control M', icon: null, image: 'Control-m_logo.svg.png', color: '#0078D4', category: 'DevOps/Tools' },
-    { name: 'Postman', icon: null, image: 'Postman_logo.svg.png', color: '#FF6C37', category: 'DevOps/Tools' },
+    { name: 'Control M', icon: null, image: 'icons/Control-m_logo.svg.png', color: '#0078D4', category: 'DevOps/Tools' },
+    { name: 'Postman', icon: null, image: 'icons/Postman_logo.svg.png', color: '#FF6C37', category: 'DevOps/Tools' },
     { name: 'Github', icon: FaGithub, color: '#181717', category: 'DevOps/Tools' },
     { name: 'Gitlab', icon: FaGitlab, color: '#FC6D26', category: 'DevOps/Tools' },
-    { name: 'Oracle OJet', icon: null, image: 'Oracle_OJet_logo.png', color: '#F80000', category: 'DevOps/Tools' },
+    { name: 'Oracle OJet', icon: null, image: 'icons/Oracle_OJet_logo.png', color: '#F80000', category: 'DevOps/Tools' },
     // Databases / Search
-    { name: 'Microsoft SQL Server', icon: null, image: 'Microsoft_SQL_Server_Logo.svg.png', color: '#CC2927', category: 'Databases' },
-    { name: 'Couchbase', icon: null, image: 'couchbase.svg', color: '#DE3C3C', category: 'Databases' },
-    { name: 'Elasticsearch', icon: null, image: 'Elastic_search.svg', color: '#005571', category: 'Data/Streaming' }
+    { name: 'Microsoft SQL Server', icon: null, image: 'icons/Microsoft_SQL_Server_Logo.svg.png', color: '#CC2927', category: 'Databases' },
+    { name: 'Couchbase', icon: null, image: 'icons/couchbase.svg', color: '#DE3C3C', category: 'Databases' },
+    { name: 'Elasticsearch', icon: null, image: 'icons/Elastic_search.svg', color: '#005571', category: 'Data/Streaming' }
   ];
 
   return (
