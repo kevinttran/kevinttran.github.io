@@ -113,6 +113,7 @@
 .achievements-list {
   margin: 0;
   padding-left: 20px;
+  text-align: left;
 }
 
 .achievements-list li {
