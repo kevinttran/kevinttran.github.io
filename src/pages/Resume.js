@@ -7,51 +7,51 @@ function Resume() {
     {
       company: 'Salesforce',
       title: 'Software Engineer MTS',
-      period: 'Recent',
+      period: 'October 2022 - May 2024',
       achievements: [
-        'Stub: Achievement 1 for Salesforce',
-        'Stub: Achievement 2 for Salesforce',
-        'Stub: Achievement 3 for Salesforce'
+        'Resolved critical bugs, integrated comprehensive metrics, and significantly improved the efficiency of Marketing Cloud Contacts applications.',
+        'Refined product backlogs and collaborated with stakeholders to prioritize deliverables for each release cycle.',
+        'Architected and implemented large-scale telemetry systems for client billing on Microsoft SQL Server, handling datasets exceeding billions of records.'
       ]
     },
     {
       company: 'Oracle',
       title: 'Senior Cloud Engineer SMTS',
-      period: 'Previous',
+      period: 'July 2020 - September 2022',
       achievements: [
-        'Stub: Achievement 1 for Oracle',
-        'Stub: Achievement 2 for Oracle',
-        'Stub: Achievement 3 for Oracle'
+        'Led the end-to-end development of new internal applications, driving projects from inception to General Availability (GA).',
+        'Interviewed, onboarded, and mentored engineers for a cross-regional team, fostering a culture of technical excellence.',
+        'Developed robust CI/CD pipelines to ensure scalable, consistent, and automated builds and deployments.'
       ]
     },
     {
       company: 'USAA',
       title: 'Software Engineer',
-      period: 'Previous',
+      period: 'January 2017 - July 2020',
       achievements: [
-        'Stub: Achievement 1 for USAA',
-        'Stub: Achievement 2 for USAA',
-        'Stub: Achievement 3 for USAA'
+        'Designed and implemented full-stack applications serving the enterprise data and operations communities.',
+        'Developed innovative Proof of Concepts (PoCs) during Hackathons to drive enterprise solution strategies.',
+        'Diagnosed and resolved critical system outages for core applications under high-pressure emergency conditions.',
+        'Led the migration of critical legacy applications to modern, cloud-native frameworks, accelerating delivery velocity.',
+        'Optimized application performance across both frontend interfaces and API layers, enhancing user experience and system throughput.'
       ]
     },
     {
       company: 'United States Navy',
       title: 'Petty Officer Second Class',
-      period: 'Previous',
+      period: 'March 2014 - October 2016',
       achievements: [
-        'Stub: Achievement 1 for US Navy',
-        'Stub: Achievement 2 for US Navy',
-        'Stub: Achievement 3 for US Navy'
+        'Led a team in the comprehensive overhaul of the military command’s inventory of technical equipment and weapons systems.',
+        'Resolved complex internal communication and electronic issues by analyzing technical manuals and schematics, performing troubleshooting, and executing repairs.'
       ]
     },
     {
       company: 'University of California, Irvine SCES',
       title: 'Programmer Analyst',
-      period: 'Previous',
+      period: 'September 2009 - February 2014',
       achievements: [
-        'Stub: Achievement 1 for UCI',
-        'Stub: Achievement 2 for UCI',
-        'Stub: Achievement 3 for UCI'
+        'Provided technical support for enterprise application deployments, end users, and networking infrastructure.',
+        'Spearheaded the overhaul of the legacy Point of Sale system to a modern, secure payment processing solution.'
       ]
     }
   ];

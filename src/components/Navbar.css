@@ -1,5 +1,5 @@
 .navbar {
-  background: #282c34;
+  background: #222222;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -57,12 +57,12 @@
 }
 
 .nav-links:hover {
-  color: #61dafb;
-  border-bottom: 4px solid #61dafb;
+  color: #2ECC71;
+  border-bottom: 4px solid #2ECC71;
 }
 
 .nav-links.active {
-  border-bottom: 4px solid #61dafb;
+  border-bottom: 4px solid #2ECC71;
 }
 
 @media screen and (max-width: 960px) {
