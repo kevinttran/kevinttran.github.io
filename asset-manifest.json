@@ -1,15 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.8c0d8b46.css",
-    "main.js": "/static/js/main.97100a23.js",
+    "main.css": "/static/css/main.bebdee9d.css",
+    "main.js": "/static/js/main.cdaff289.js",
     "static/js/453.46658439.chunk.js": "/static/js/453.46658439.chunk.js",
     "index.html": "/index.html",
-    "main.8c0d8b46.css.map": "/static/css/main.8c0d8b46.css.map",
-    "main.97100a23.js.map": "/static/js/main.97100a23.js.map",
+    "static/media/getting-started-with-react-19.md": "/static/media/getting-started-with-react-19.a408e96dfc732557862f.md",
+    "static/media/understanding-kubernetes-pods.md": "/static/media/understanding-kubernetes-pods.e481e73333ca627a66fb.md",
+    "static/media/building-scalable-apis-with-nodejs.md": "/static/media/building-scalable-apis-with-nodejs.47e1ddd51f57cdbe4d4a.md",
+    "static/media/css-grid-vs-flexbox.md": "/static/media/css-grid-vs-flexbox.2efaf78eb475ae5b7879.md",
+    "main.bebdee9d.css.map": "/static/css/main.bebdee9d.css.map",
+    "main.cdaff289.js.map": "/static/js/main.cdaff289.js.map",
     "453.46658439.chunk.js.map": "/static/js/453.46658439.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8c0d8b46.css",
-    "static/js/main.97100a23.js"
+    "static/css/main.bebdee9d.css",
+    "static/js/main.cdaff289.js"
   ]
 }
