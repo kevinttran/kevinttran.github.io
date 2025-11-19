@@ -9,6 +9,7 @@ function Blog() {
   const [selectedTag, setSelectedTag] = useState('All');
   const [dateFilter, setDateFilter] = useState('All');
   const [bookmarked, setBookmarked] = useState(new Set());
+  const [showFilters, setShowFilters] = useState(false);
 
   // Extract unique tags
   const allTags = useMemo(() => {
@@ -63,35 +64,48 @@ function Blog() {
 
       {/* Filters */}
       <section className="filters-section">
-        <div className="filter-group">
-          <span className="filter-label">Filter by Topic:</span>
-          <div className="tags-container">
-            {allTags.map(tag => (
-              <button
-                key={tag}
-                className={`filter-tag ${selectedTag === tag ? 'active' : ''}`}
-                onClick={() => setSelectedTag(tag)}
-              >
-                {tag}
-              </button>
-            ))}
-          </div>
+        <div className="filter-toggle">
+          <button 
+            className="toggle-filters-btn" 
+            onClick={() => setShowFilters(!showFilters)}
+          >
+            {showFilters ? '− Hide Filters' : '+ Show Filters'}
+          </button>
         </div>
+        
+        {showFilters && (
+          <div className="filters-content">
+            <div className="filter-group">
+              <span className="filter-label">Filter by Topic:</span>
+              <div className="tags-container">
+                {allTags.map(tag => (
+                  <button
+                    key={tag}
+                    className={`filter-tag ${selectedTag === tag ? 'active' : ''}`}
+                    onClick={() => setSelectedTag(tag)}
+                  >
+                    {tag}
+                  </button>
+                ))}
+              </div>
+            </div>
 
-        <div className="filter-group">
-          <span className="filter-label">Filter by Date:</span>
-          <div className="date-filters">
-            {['All', 'Last 30 Days', 'Last 6 Months', 'Last Year'].map(filter => (
-              <button
-                key={filter}
-                className={`filter-tag ${dateFilter === filter ? 'active' : ''}`}
-                onClick={() => setDateFilter(filter)}
-              >
-                {filter}
-              </button>
-            ))}
+            <div className="filter-group">
+              <span className="filter-label">Filter by Date:</span>
+              <div className="date-filters">
+                {['All', 'Last 30 Days', 'Last 6 Months', 'Last Year'].map(filter => (
+                  <button
+                    key={filter}
+                    className={`filter-tag ${dateFilter === filter ? 'active' : ''}`}
+                    onClick={() => setDateFilter(filter)}
+                  >
+                    {filter}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        )}
       </section>
 
       {/* Featured Section */}

@@ -160,6 +160,33 @@
   border: 1px solid #E5E7EB;
 }
 
+.filter-toggle {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.toggle-filters-btn {
+  background: #fff;
+  border: 1px solid #2ECC71;
+  color: #2ECC71;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.toggle-filters-btn:hover {
+  background: #2ECC71;
+  color: white;
+}
+
+.filters-content {
+  margin-top: 15px;
+}
+
 .filter-group {
   margin-bottom: 15px;
 }

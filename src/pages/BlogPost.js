@@ -10,17 +10,31 @@ function BlogPost() {
   const { id } = useParams();
   const navigate = useNavigate();
   const [post, setPost] = useState(null);
+  const [content, setContent] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const foundPost = blogPosts.find(p => p.id === id);
     if (foundPost) {
       setPost(foundPost);
+      
+      // Dynamically import the markdown file as raw text
+      fetch(require(`../data/posts/${foundPost.contentFile}`))
+        .then(response => response.text())
+        .then(text => {
+          setContent(text);
+          setLoading(false);
+        })
+        .catch(error => {
+          console.error('Error loading markdown:', error);
+          setLoading(false);
+        });
     } else {
       navigate('/blog');
     }
   }, [id, navigate]);
 
-  if (!post) return null;
+  if (!post || loading) return <div className="blog-post-page">Loading...</div>;
 
   return (
     <div className="blog-post-page">
@@ -36,7 +50,7 @@ function BlogPost() {
             <span>•</span>
             <span>{format(parseISO(post.date), 'MMMM d, yyyy')}</span>
             <span>•</span>
-            <span>{Math.ceil(post.content.length / 500)} min read</span>
+            <span>{Math.ceil(content.length / 500)} min read</span>
           </div>
           <div className="post-tags">
             {post.tags.map(tag => (
@@ -48,7 +62,7 @@ function BlogPost() {
         <img src={post.image} alt={post.title} className="post-hero-image" />
 
         <div className="post-content">
-          <ReactMarkdown>{post.content}</ReactMarkdown>
+          <ReactMarkdown>{content}</ReactMarkdown>
         </div>
 
         <div className="post-actions">
