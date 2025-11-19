@@ -1,5 +1,5 @@
 .navbar {
-  background: #222222;
+  background: #064E3B;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -31,19 +31,20 @@
 }
 
 .nav-menu {
-  display: grid;
-  grid-template-columns: repeat(3, auto);
-  grid-gap: 10px;
+  display: flex;
+  gap: 20px;
   list-style: none;
   text-align: center;
-  width: 70vw;
-  justify-content: end;
+  justify-content: flex-end;
   margin: 0;
   padding: 0;
+  flex-grow: 1;
 }
 
 .nav-item {
   height: 80px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links {
@@ -54,60 +55,67 @@
   padding: 0 1rem;
   height: 100%;
   transition: all 0.2s ease-out;
+  white-space: nowrap;
 }
 
 .nav-links:hover {
-  color: #2ECC71;
-  border-bottom: 4px solid #2ECC71;
+  color: #10B981;
+  border-bottom: 4px solid #10B981;
 }
 
 .nav-links.active {
-  border-bottom: 4px solid #2ECC71;
+  border-bottom: 4px solid #10B981;
 }
 
 @media screen and (max-width: 960px) {
-  .nav-menu {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 80px;
-    left: -100%;
-    opacity: 1;
-    transition: all 0.5s ease;
+  .navbar-container {
+    padding: 0 10px;
   }
 
-  .nav-menu.active {
-    background: #242222;
-    left: 0;
-    opacity: 1;
-    transition: all 0.5s ease;
-    z-index: 1;
+  .nav-menu {
+    gap: 10px;
   }
-  
-  /* Simplified mobile view for now, just stacking */
+
+  .nav-links {
+    padding: 0 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .navbar {
+    height: auto;
+    padding: 10px 0;
+  }
+
   .navbar-container {
     flex-direction: column;
     height: auto;
-    padding: 10px;
   }
   
   .nav-menu {
-    position: static;
     width: 100%;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     padding-top: 10px;
+    gap: 5px;
   }
   
   .nav-item {
-    height: auto;
+    height: 40px;
   }
   
   .nav-links {
-    padding: 10px;
-    font-size: 1rem;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .nav-links:hover, .nav-links.active {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-bottom: none;
   }
 }

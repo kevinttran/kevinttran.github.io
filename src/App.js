@@ -4,6 +4,8 @@ import Navbar from './components/Navbar';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import './App.css';
 
 function App() {
@@ -15,6 +17,8 @@ function App() {
           <Route path="/" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/resume" element={<Resume />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </div>
     </Router>

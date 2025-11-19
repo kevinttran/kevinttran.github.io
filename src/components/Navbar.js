@@ -36,6 +36,14 @@ function Navbar() {
               Resume
             </Link>
           </li>
+          <li className="nav-item">
+            <Link 
+              to="/blog" 
+              className={`nav-links ${location.pathname.startsWith('/blog') ? 'active' : ''}`}
+            >
+              Blog
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
