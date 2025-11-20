@@ -115,3 +115,10 @@
   font-size: 3rem;
   margin-bottom: 15px;
 }
+
+.demo-image {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 12px;
+  object-fit: contain;
+}

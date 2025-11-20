@@ -37,7 +37,7 @@ function Projects() {
   ];
 
   const demos = [
-    { name: 'Demo Project 1', url: '#', icon: FaGithub },
+    { name: 'Pokédex', url: '#', image: process.env.PUBLIC_URL + '/demo/Pokedex.png' },
     { name: 'Demo Project 2', url: '#', icon: FaGithub },
     { name: 'Demo Project 3', url: '#', icon: FaExternalLinkAlt },
   ];
@@ -79,7 +79,11 @@ function Projects() {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                <Icon className="demo-icon" />
+                {demo.image ? (
+                  <img src={demo.image} alt={demo.name} className="demo-icon demo-image" />
+                ) : (
+                  <Icon className="demo-icon" />
+                )}
                 <span>{demo.name}</span>
               </a>
             );
