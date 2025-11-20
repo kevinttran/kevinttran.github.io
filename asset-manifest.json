@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.bebdee9d.css",
-    "main.js": "/static/js/main.d6f357e8.js",
+    "main.css": "/static/css/main.b592ce1b.css",
+    "main.js": "/static/js/main.adeaa8cf.js",
     "static/js/453.46658439.chunk.js": "/static/js/453.46658439.chunk.js",
     "static/media/returning-to-dev-after-a-year-with-ai-tools.md": "/static/media/returning-to-dev-after-a-year-with-ai-tools.8a2e39b9e4918ab1dd04.md",
     "index.html": "/index.html",
-    "main.bebdee9d.css.map": "/static/css/main.bebdee9d.css.map",
-    "main.d6f357e8.js.map": "/static/js/main.d6f357e8.js.map",
+    "main.b592ce1b.css.map": "/static/css/main.b592ce1b.css.map",
+    "main.adeaa8cf.js.map": "/static/js/main.adeaa8cf.js.map",
     "453.46658439.chunk.js.map": "/static/js/453.46658439.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.bebdee9d.css",
-    "static/js/main.d6f357e8.js"
+    "static/css/main.b592ce1b.css",
+    "static/js/main.adeaa8cf.js"
   ]
 }
