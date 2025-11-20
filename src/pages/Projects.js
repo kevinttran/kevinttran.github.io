@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import './Projects.css';
 
@@ -37,7 +38,7 @@ function Projects() {
   ];
 
   const demos = [
-    { name: 'Pokédex', url: '#', image: process.env.PUBLIC_URL + '/demo/Pokedex.png' },
+    { name: 'Pokédex', url: '/pokedex', image: process.env.PUBLIC_URL + '/demo/Pokedex.png', internal: true },
     { name: 'Demo Project 2', url: '#', icon: FaGithub },
     { name: 'Demo Project 3', url: '#', icon: FaExternalLinkAlt },
   ];
@@ -71,7 +72,26 @@ function Projects() {
         <div className="demos-grid">
           {demos.map((demo, index) => {
             const Icon = demo.icon;
-            return (
+            const content = (
+              <>
+                {demo.image ? (
+                  <img src={demo.image} alt={demo.name} className="demo-icon demo-image" />
+                ) : (
+                  <Icon className="demo-icon" />
+                )}
+                <span>{demo.name}</span>
+              </>
+            );
+            
+            return demo.internal ? (
+              <Link 
+                key={index} 
+                to={demo.url} 
+                className="demo-card"
+              >
+                {content}
+              </Link>
+            ) : (
               <a 
                 key={index} 
                 href={demo.url} 
@@ -79,12 +99,7 @@ function Projects() {
                 target="_blank" 
                 rel="noopener noreferrer"
               >
-                {demo.image ? (
-                  <img src={demo.image} alt={demo.name} className="demo-icon demo-image" />
-                ) : (
-                  <Icon className="demo-icon" />
-                )}
-                <span>{demo.name}</span>
+                {content}
               </a>
             );
           })}
