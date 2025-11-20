@@ -32,7 +32,7 @@ function Projects() {
     },
     {
       name: 'Marketing Cloud Contacts',
-      description: 'A high-scale contact management system capable of handling billions of records. Optimized database queries and implemented caching strategies to ensure low-latency access to critical customer information.',
+      description: 'A high-scale contact management system for the Salesforce Marketing Cloud capable of handling billions of records. Optimized database queries and implemented caching strategies to ensure low-latency access to critical customer information.',
       tech: ['C#', 'SQL Server', 'Azure', 'Kubernetes', 'Docker', 'Splunk']
     }
   ];
