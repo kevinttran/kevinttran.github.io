@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaExternalLinkAlt } from 'react-icons/fa';
 import './Projects.css';
 
 function Projects() {
@@ -40,7 +39,6 @@ function Projects() {
   const demos = [
     { name: 'Pokédex', url: '/pokedex', image: process.env.PUBLIC_URL + '/demo/Pokedex.png', internal: true },
     { name: 'Type Match-Up Visualizer', url: '/type-visualizer', image: process.env.PUBLIC_URL + '/demo/Type_visualizer.png', internal: true },
-    { name: 'Demo Project 3', url: '#', icon: FaExternalLinkAlt },
   ];
 
   return (
@@ -50,25 +48,8 @@ function Projects() {
         <p>A showcase of my professional work and personal experiments.</p>
       </header>
 
-      <section className="projects-section">
-        <h2 className="section-title">Notable Corporate Projects</h2>
-        <div className="projects-grid">
-          {corporateProjects.map((project, index) => (
-            <div key={index} className="project-card">
-              <h3>{project.name}</h3>
-              <p>{project.description}</p>
-              <div className="project-tech">
-                {project.tech.map((t, i) => (
-                  <span key={i} className="tech-tag">{t}</span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section className="demos-section">
-        <h2 className="section-title">Project Demos</h2>
+        <h2 className="section-title">Interactive Demos</h2>
         <div className="demos-grid">
           {demos.map((demo, index) => {
             const Icon = demo.icon;
@@ -103,6 +84,23 @@ function Projects() {
               </a>
             );
           })}
+        </div>
+      </section>
+
+      <section className="projects-section">
+        <h2 className="section-title">Notable Corporate Projects</h2>
+        <div className="projects-grid">
+          {corporateProjects.map((project, index) => (
+            <div key={index} className="project-card">
+              <h3>{project.name}</h3>
+              <p>{project.description}</p>
+              <div className="project-tech">
+                {project.tech.map((t, i) => (
+                  <span key={i} className="tech-tag">{t}</span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>

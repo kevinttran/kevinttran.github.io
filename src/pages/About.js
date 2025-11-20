@@ -1,5 +1,5 @@
 import React from 'react';
-import { 
+import {
   FaHtml5, FaCss3Alt, FaJsSquare, FaJava, FaPython, FaCode,
   FaNodeJs, FaReact, FaAngular, FaDocker, FaGithub,
   FaGitlab, FaCubes, FaLinkedin, FaEnvelope
@@ -101,6 +101,9 @@ function About() {
           <p>
             Across every role, I've remained committed to building reliable, scalable software and contributing to teams that value innovation, clarity, and impact.
           </p>
+          <p>
+            When I’m not building software, I like to spend my time on the golf course, hitting the gym, or exploring new video games. These hobbies give me a mix of focus, creativity, and balance that I bring back into my work.
+          </p>
         </div>
       </section>
 
@@ -127,8 +130,8 @@ function About() {
             return (
               <div key={framework.name} className="framework-item">
                 {framework.image ? (
-                  <img 
-                    src={process.env.PUBLIC_URL + '/' + framework.image} 
+                  <img
+                    src={process.env.PUBLIC_URL + '/' + framework.image}
                     alt={framework.name}
                     className="framework-icon framework-image"
                   />
