@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect, useRef, useCallback } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaSun, FaMoon } from 'react-icons/fa';
@@ -18,6 +18,7 @@ function Pokedex() {
   const [limit, setLimit] = useState(50);
   const [selectedPokemon, setSelectedPokemon] = useState(null);
   const [darkMode, setDarkMode] = useState(false);
+  const observerTarget = useRef(null);
 
   // Fetch Pokemon list
   const { data: pokemonList, isLoading, error } = useQuery({
@@ -38,12 +39,42 @@ function Pokedex() {
     staleTime: 1000 * 60 * 5, // 5 minutes
   });
 
+  // Fetch Pokemon by ID when searching by number
+  const { data: searchedPokemon, isLoading: isSearching } = useQuery({
+    queryKey: ['pokemon-search', searchTerm],
+    queryFn: async () => {
+      const trimmed = searchTerm.trim();
+      // Check if search term is a number
+      if (/^\d+$/.test(trimmed)) {
+        try {
+          const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${trimmed}`);
+          if (!response.ok) return null;
+          return [await response.json()];
+        } catch {
+          return null;
+        }
+      }
+      return null;
+    },
+    enabled: searchTerm.trim().length > 0 && /^\d+$/.test(searchTerm.trim()),
+    staleTime: 1000 * 60 * 5,
+  });
+
   // Filter Pokemon based on search and type
   const filteredPokemon = useMemo(() => {
+    // If searching by ID and we got a result from API
+    if (searchedPokemon) {
+      if (selectedType === 'all' || searchedPokemon[0].types.some(t => t.type.name === selectedType)) {
+        return searchedPokemon;
+      }
+      return [];
+    }
+
     if (!pokemonList) return [];
     
     return pokemonList.filter(pokemon => {
-      const matchesSearch = pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      const matchesSearch = searchTerm === '' || 
+                           pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            pokemon.id.toString().includes(searchTerm);
       
       const matchesType = selectedType === 'all' || 
@@ -51,11 +82,36 @@ function Pokedex() {
       
       return matchesSearch && matchesType;
     });
-  }, [pokemonList, searchTerm, selectedType]);
+  }, [pokemonList, searchTerm, selectedType, searchedPokemon]);
 
-  const handleLoadMore = () => {
-    setLimit(prev => prev + 50);
-  };
+  // Infinite scroll observer
+  const handleLoadMore = useCallback(() => {
+    if (!isLoading && limit < 1000 && !searchTerm && selectedType === 'all') {
+      setLimit(prev => prev + 50);
+    }
+  }, [isLoading, limit, searchTerm, selectedType]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        if (entries[0].isIntersecting) {
+          handleLoadMore();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    const currentTarget = observerTarget.current;
+    if (currentTarget) {
+      observer.observe(currentTarget);
+    }
+
+    return () => {
+      if (currentTarget) {
+        observer.unobserve(currentTarget);
+      }
+    };
+  }, [handleLoadMore]);
 
   if (error) {
     return (
@@ -121,7 +177,7 @@ function Pokedex() {
         </div>
       </motion.div>
 
-      {isLoading ? (
+      {isLoading && limit === 50 ? (
         <div className="loading-state">
           <motion.div
             animate={{ rotate: 360 }}
@@ -152,20 +208,33 @@ function Pokedex() {
             </AnimatePresence>
           </motion.div>
 
-          {filteredPokemon.length === 0 && (
+          {filteredPokemon.length === 0 && !isSearching && (
             <div className="loading-state">
               <p>No Pokémon found matching your search criteria.</p>
             </div>
           )}
 
+          {isSearching && (
+            <div className="loading-state">
+              <p>Searching for Pokémon...</p>
+            </div>
+          )}
+
+          {/* Infinite scroll trigger */}
           {!searchTerm && selectedType === 'all' && limit < 1000 && (
-            <button
-              className="load-more-btn"
-              onClick={handleLoadMore}
-              disabled={isLoading}
-            >
-              {isLoading ? 'Loading...' : 'Load More Pokémon'}
-            </button>
+            <div ref={observerTarget} className="scroll-trigger">
+              {isLoading && (
+                <div className="loading-state">
+                  <motion.div
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                  >
+                    🔴
+                  </motion.div>
+                  <p>Loading more Pokémon...</p>
+                </div>
+              )}
+            </div>
           )}
         </>
       )}

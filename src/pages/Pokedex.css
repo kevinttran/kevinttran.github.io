@@ -262,6 +262,14 @@
   cursor: not-allowed;
 }
 
+.scroll-trigger {
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0;
+}
+
 /* Pokemon Type Colors */
 .type-normal { background-color: #A8A878; }
 .type-fire { background-color: #F08030; }
