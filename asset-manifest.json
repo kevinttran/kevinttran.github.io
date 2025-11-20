@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.386f179e.css",
-    "main.js": "/static/js/main.aa095efa.js",
+    "main.js": "/static/js/main.3756c305.js",
     "static/css/59.9850fd94.chunk.css": "/static/css/59.9850fd94.chunk.css",
     "static/js/59.55682265.chunk.js": "/static/js/59.55682265.chunk.js",
     "static/css/812.520ddc1e.chunk.css": "/static/css/812.520ddc1e.chunk.css",
@@ -11,7 +11,7 @@
     "static/media/returning-to-dev-after-a-year-with-ai-tools.md": "/static/media/returning-to-dev-after-a-year-with-ai-tools.8a2e39b9e4918ab1dd04.md",
     "index.html": "/index.html",
     "main.386f179e.css.map": "/static/css/main.386f179e.css.map",
-    "main.aa095efa.js.map": "/static/js/main.aa095efa.js.map",
+    "main.3756c305.js.map": "/static/js/main.3756c305.js.map",
     "59.9850fd94.chunk.css.map": "/static/css/59.9850fd94.chunk.css.map",
     "59.55682265.chunk.js.map": "/static/js/59.55682265.chunk.js.map",
     "812.520ddc1e.chunk.css.map": "/static/css/812.520ddc1e.chunk.css.map",
@@ -21,6 +21,6 @@
   },
   "entrypoints": [
     "static/css/main.386f179e.css",
-    "static/js/main.aa095efa.js"
+    "static/js/main.3756c305.js"
   ]
 }
