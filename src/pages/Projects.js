@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 import './Projects.css';
 
 function Projects() {
@@ -39,7 +39,7 @@ function Projects() {
 
   const demos = [
     { name: 'Pokédex', url: '/pokedex', image: process.env.PUBLIC_URL + '/demo/Pokedex.png', internal: true },
-    { name: 'Demo Project 2', url: '#', icon: FaGithub },
+    { name: 'Type Match-Up Visualizer', url: '/type-visualizer', image: process.env.PUBLIC_URL + '/demo/Type_visualizer.png', internal: true },
     { name: 'Demo Project 3', url: '#', icon: FaExternalLinkAlt },
   ];
 
