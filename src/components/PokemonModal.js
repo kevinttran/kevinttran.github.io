@@ -5,6 +5,17 @@ import { FaTimes } from 'react-icons/fa';
 import './PokemonModal.css';
 
 function PokemonModal({ pokemon, onClose, darkMode }) {
+  // Get best available sprite with fallback chain
+  const getSprite = () => {
+    return (
+      pokemon.sprites.other?.['official-artwork']?.front_default ||
+      pokemon.sprites.other?.home?.front_default ||
+      pokemon.sprites.other?.['showdown']?.front_default ||
+      pokemon.sprites.front_default ||
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png'
+    );
+  };
+
   // Fetch evolution chain
   const { data: evolutionData } = useQuery({
     queryKey: ['evolution', pokemon.id],
@@ -65,7 +76,7 @@ function PokemonModal({ pokemon, onClose, darkMode }) {
           <div className="modal-pokemon-id">#{String(pokemon.id).padStart(3, '0')}</div>
           <h2 className="modal-pokemon-name">{pokemon.name}</h2>
           <img
-            src={pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default}
+            src={getSprite()}
             alt={pokemon.name}
             className="modal-pokemon-image"
           />

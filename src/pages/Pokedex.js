@@ -37,6 +37,27 @@ function Pokedex() {
       return Promise.all(detailsPromises);
     },
     staleTime: 1000 * 60 * 5, // 5 minutes
+    enabled: selectedType === 'all', // Only fetch when showing all types
+  });
+
+  // Fetch Pokemon by type
+  const { data: typePokemonList, isLoading: isLoadingType } = useQuery({
+    queryKey: ['pokemon-type', selectedType],
+    queryFn: async () => {
+      const response = await fetch(`https://pokeapi.co/api/v2/type/${selectedType}`);
+      if (!response.ok) throw new Error('Failed to fetch Pokemon by type');
+      const data = await response.json();
+      
+      // Fetch details for each Pokemon in this type
+      const detailsPromises = data.pokemon.map(async (p) => {
+        const res = await fetch(p.pokemon.url);
+        return res.json();
+      });
+      
+      return Promise.all(detailsPromises);
+    },
+    staleTime: 1000 * 60 * 5,
+    enabled: selectedType !== 'all', // Only fetch when a type is selected
   });
 
   // Fetch Pokemon by ID when searching by number
@@ -64,12 +85,22 @@ function Pokedex() {
   const filteredPokemon = useMemo(() => {
     // If searching by ID and we got a result from API
     if (searchedPokemon) {
-      if (selectedType === 'all' || searchedPokemon[0].types.some(t => t.type.name === selectedType)) {
-        return searchedPokemon;
-      }
-      return [];
+      return searchedPokemon;
     }
 
+    // If a type is selected, use type-specific list
+    if (selectedType !== 'all' && typePokemonList) {
+      if (searchTerm === '') {
+        return typePokemonList;
+      }
+      // Filter type results by search term
+      return typePokemonList.filter(pokemon => 
+        pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        pokemon.id.toString().includes(searchTerm)
+      );
+    }
+
+    // Otherwise use the main list
     if (!pokemonList) return [];
     
     return pokemonList.filter(pokemon => {
@@ -77,12 +108,9 @@ function Pokedex() {
                            pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            pokemon.id.toString().includes(searchTerm);
       
-      const matchesType = selectedType === 'all' || 
-                         pokemon.types.some(t => t.type.name === selectedType);
-      
-      return matchesSearch && matchesType;
+      return matchesSearch;
     });
-  }, [pokemonList, searchTerm, selectedType, searchedPokemon]);
+  }, [pokemonList, searchTerm, selectedType, searchedPokemon, typePokemonList]);
 
   // Infinite scroll observer
   const handleLoadMore = useCallback(() => {
@@ -123,6 +151,8 @@ function Pokedex() {
       </div>
     );
   }
+
+  const isLoadingData = (selectedType === 'all' ? isLoading : isLoadingType) && limit === 50;
 
   return (
     <div className={`pokedex-page ${darkMode ? 'dark-mode' : ''}`}>
@@ -177,7 +207,7 @@ function Pokedex() {
         </div>
       </motion.div>
 
-      {isLoading && limit === 50 ? (
+      {isLoadingData ? (
         <div className="loading-state">
           <motion.div
             animate={{ rotate: 360 }}

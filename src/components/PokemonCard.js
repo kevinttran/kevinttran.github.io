@@ -2,6 +2,17 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 function PokemonCard({ pokemon, index, onClick, darkMode }) {
+  // Get best available sprite with fallback chain
+  const getSprite = () => {
+    return (
+      pokemon.sprites.other?.['official-artwork']?.front_default ||
+      pokemon.sprites.other?.home?.front_default ||
+      pokemon.sprites.other?.['showdown']?.front_default ||
+      pokemon.sprites.front_default ||
+      'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png'
+    );
+  };
+
   return (
     <motion.div
       className="pokemon-card"
@@ -16,7 +27,7 @@ function PokemonCard({ pokemon, index, onClick, darkMode }) {
     >
       <div className="pokemon-id">#{String(pokemon.id).padStart(3, '0')}</div>
       <img
-        src={pokemon.sprites.other['official-artwork'].front_default || pokemon.sprites.front_default}
+        src={getSprite()}
         alt={pokemon.name}
         className="pokemon-image"
         loading="lazy"
